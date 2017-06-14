@@ -63,7 +63,7 @@
 % The list of authors, and the short list which is used in the headers.
 % If you need two or more lines of authors, add an extra line using \newauthor
 \author[]{
-,$^{1}$\thanks{E-mail: mn@ras.org.uk (KTS)}
+,$^{1}$\thanks{}
 ,$^{2}$
 $^{2,3}$
 $^{3}$
@@ -102,7 +102,42 @@ keyword1 -- keyword2 -- keyword3
 
 %%%%%%%%%%%%%%%%% BODY OF PAPER %%%%%%%%%%%%%%%%%%
 
+\section{Introduction}
 
+\section{Methods}
+
+Starpy from becky's paper \cite{smethurst2015galaxy}.
+Becky's group environment paper \cite{smethurst2017galaxy}.
+UltraVista catalogue paper \cite{muzzin2013public}
+\section{Data}
+   
+   \subsection{Multi-wavelength data}
+   
+   This study is based on a K$_{s}$-selected catalog of the COSMOS/UltraVISTA field from \cite{muzzin2013public}.  
+   The catalog contains PSF-matched photometry in 30 photometric bands covering the wavelength range 0.15$\micron$ 
+   $\rightarrow$ 24$\micron$ and includes the available $GALEX$ \citep{martin2005}, CFHT/Subaru \citep{capak2007}, 
+   UltraVISTA \citep{mcCraken2012}, S-COSMOS \citep{sanders2007}, and zCOSMOS \citep{lilly2009} datasets.
+
+\section{Model}
+
+   \begin{equation}
+      \text{SFR}(t) = \begin{cases}
+                \text{SFR}_{0}(t_{q}) & t \leq t_{q} \\
+                \text{SFR}_{0}(t_{q})\exp\bigg[-\frac{(t-t_{q})}{\tau}\bigg] & t > t_{q} 
+               \end{cases}
+       \label{eq:model}
+   \end{equation}
+
+\section{Probalistic Fitting}
+
+
+   \begin{equation}
+      P(\theta_{k}) = \begin{cases}
+                       1 & 0\leq t_{q}\text{ [Gyr] } \leq 13.8 \text{ and }  0 \leq \tau\text{ [Gyr] } \leq 4 \\
+                       0 & \text{otherwise}
+                      \end{cases}
+      \label{eq:prior}
+   \end{equation}
 
 \section{Conclusions}
 
