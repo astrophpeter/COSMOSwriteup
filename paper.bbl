@@ -22,6 +22,12 @@
 {Capak} P.,  et~al., 2007, \mn@doi [\apjs] {10.1086/519081}, \href
   {http://adsabs.harvard.edu/abs/2007ApJS..172...99C} {172, 99}
 
+\bibitem[\protect\citeauthoryear{{Darvish}, {Mobasher}, {Sobral}, {Scoville}
+  \& {Aragon-Calvo}}{{Darvish} et~al.}{2015}]{darvish2015}
+{Darvish} B.,  {Mobasher} B.,  {Sobral} D.,  {Scoville} N.,   {Aragon-Calvo}
+  M.,  2015, \mn@doi [\apj] {10.1088/0004-637X/805/2/121}, \href
+  {http://adsabs.harvard.edu/abs/2015ApJ...805..121D} {805, 121}
+
 \bibitem[\protect\citeauthoryear{{Lilly} et~al.,}{{Lilly}
   et~al.}{2009}]{lilly2009}
 {Lilly} S.~J.,  et~al., 2009, \mn@doi [\apjs] {10.1088/0067-0049/184/2/218},
@@ -57,6 +63,11 @@
 Smethurst R.,  Lintott C.,  Bamford S.,  Hart R.,  Kruk S.,  Masters K.,
   Nichol R.,   Simmons B.,  2017, Monthly Notices of the Royal Astronomical
   Society, 469, 3670
+
+\bibitem[\protect\citeauthoryear{{Willett} et~al.,}{{Willett}
+  et~al.}{2017}]{galaxyzooHubble}
+{Willett} K.~W.,  et~al., 2017, \mn@doi [\mnras] {10.1093/mnras/stw2568}, \href
+  {http://adsabs.harvard.edu/abs/2017MNRAS.464.4176W} {464, 4176}
 
 \makeatother
 \end{thebibliography}
