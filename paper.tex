@@ -20,37 +20,20 @@
 %    First version: a simple (ish) template for creating an MNRAS paper
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Basic setup. Most papers should leave these options alone.
 \documentclass[a4paper,fleqn,usenatbib]{mnras}
-
-% MNRAS is set in Times font. If you don't have this installed (most LaTeX
-% installations will be fine) or prefer the old Computer Modern fonts, comment
-% out the following line
 \usepackage{newtxtext,newtxmath}
 % Depending on your LaTeX fonts installation, you might get better results with one of these:
 %\usepackage{mathptmx}
 %\usepackage{txfonts}
-
-% Use vector fonts, so it zooms properly in on-screen viewing software
-% Don't change these lines unless you know what you are doing
 \usepackage[T1]{fontenc}
 \usepackage{ae,aecompl}
 
 
 %%%%% AUTHORS - PLACE YOUR OWN PACKAGES HERE %%%%%
 
-% Only include extra packages if you really need them. Common packages are:
-\usepackage{graphicx}	% Including figure files
-\usepackage{amsmath}	% Advanced maths commands
-\usepackage{amssymb}	% Extra maths symbols
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%% AUTHORS - PLACE YOUR OWN COMMANDS HERE %%%%%
-
-% Please keep new commands to a minimum, and use \newcommand not \def to avoid
-% overwriting existing commands. Example:
-%\newcommand{\pcm}{\,cm$^{-2}$}	% per cm-squared
+\usepackage{graphicx}
+\usepackage{amsmath}	
+\usepackage{amssymb}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -118,6 +101,15 @@ UltraVista catalogue paper \cite{muzzin2013public}
    $\rightarrow$ 24$\micron$ and includes the available $GALEX$ \citep{martin2005}, CFHT/Subaru \citep{capak2007}, 
    UltraVISTA \citep{mcCraken2012}, S-COSMOS \citep{sanders2007}, and zCOSMOS \citep{lilly2009} datasets.
 
+   \begin{itemize}
+   
+   \item Used rest frame U-V and V-J colours provided by \cite{muzzin2013public}
+   \item These were calculated using the EAZY code \cite{eazycode}, and the errors obtained from the error template in this paper.
+   \item Filters for the bands: U,V Johnson filtres from \cite{maiz2006}, J - 2Mass Filter.
+   \end{itemize}
+
+   
+
    \subsection{Environment data}
    
    Environment data from \cite{darvish2015}.
@@ -140,8 +132,12 @@ its computational time, it is a robust estimator.
 
 
    \subsection{Galaxy Zoo Hubble Morphological classifications}
-    
-   Galaxy zoo hubble data paper \cite{galaxyzooHubble}
+   
+   In this investigation we use morphological classifications obtained from the Galaxy Zoo Hubble\footnote{\url{https://hubble.galaxyzoo.org}} (GZH) citizen 
+   science project \citep{galaxyzooHubble}. GZH allowed serveral independant visual classifications of each galaxy image by volunteers, the question flowchart for each
+   image is shown in figure 4 of \cite{galaxyzooHubble}.
+
+   The GZH project consists of 119,849 images 
    
 \section{Model}
 
@@ -153,8 +149,10 @@ its computational time, it is a robust estimator.
        \label{eq:model}
    \end{equation}
 
+
 \section{Probalistic Fitting}
 
+   
 
    \begin{equation}
       P(\theta_{k}) = \begin{cases}
