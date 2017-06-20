@@ -139,8 +139,23 @@ its computational time, it is a robust estimator.
 
    The GZH project consists of 119,849 images 
    
-\section{Model}
+\section{Star Formation History Model}
 
+   \begin{itemize}
+    
+      \item we use the publicaly available starpy code \footnote{\url{http://github.com/zooniverse/starpy/}}.
+      \item  stellar population models from \cite{bruzual2003}
+  
+      \item implemented using solar metallicity
+
+      \item implement with a Chabrier IMF \cite{chabrier2003}
+
+      \item does not model for intrinsic dust.
+
+      \item  assumption that all galaxies formed at t = 0 Gyr with 
+             an initial burst of star formation
+   \end{itemize}
+ 
    \begin{equation}
       \text{SFR}(t) = \begin{cases}
                 \text{SFR}_{0}(t_{q}) & t \leq t_{q} \\
@@ -150,7 +165,6 @@ its computational time, it is a robust estimator.
    \end{equation}
 
 
-\section{Probalistic Fitting}
 
    
 
