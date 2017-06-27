@@ -1,23 +1,7 @@
 % mnras_template.tex
 %
 % LaTeX template for creating an MNRAS paper
-%
-% v3.0 released 14 May 2015
-% (version numbers match those of mnras.cls)
-%
-% Copyright (C) Royal Astronomical Society 2015
-% Authors:
-% Keith T. Smith (Royal Astronomical Society)
 
-% Change log
-%
-% v3.0 May 2015
-%    Renamed to match the new package name
-%    Version number matches mnras.cls
-%    A few minor tweaks to wording
-% v1.0 September 2013
-%    Beta testing only - never publicly released
-%    First version: a simple (ish) template for creating an MNRAS paper
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \documentclass[a4paper,fleqn,usenatbib]{mnras}
@@ -96,7 +80,7 @@ UltraVista catalogue paper \cite{muzzin2013public}
    
    \subsection{Multi-wavelength data}
    
-   This study is based on a K$_{s}$-selected catalog of the COSMOS/UltraVISTA field from \cite{muzzin2013public}.  
+   In this study we used the K$_{s}$-selected catalog of the COSMOS/UltraVISTA field from \cite{muzzin2013public}.  
    The catalog contains PSF-matched photometry in 30 photometric bands covering the wavelength range 0.15$\micron$ 
    $\rightarrow$ 24$\micron$ and includes the available $GALEX$ \citep{martin2005}, CFHT/Subaru \citep{capak2007}, 
    UltraVISTA \citep{mcCraken2012}, S-COSMOS \citep{sanders2007}, and zCOSMOS \citep{lilly2009} datasets.
@@ -108,9 +92,10 @@ UltraVista catalogue paper \cite{muzzin2013public}
    \item Filters for the bands: U,V Johnson filtres from \cite{maiz2006}, J - 2Mass Filter from \cite{2mass2006}.
    \end{itemize}
 
-
-   For the U and V filters the Johnson response curves found in \cite{maiz2006}
-   were used. The J filter used the 2MASS response curved from \cite{2mass2006}.
+   We required the rest-frame U - V and V - J colours found in \cite{muzzin2013public}, which
+   were calculated using the \textsc{EAZY} code \citep{eazycode}. For the U and V filters
+   the Johnson response curves calculated in \cite{maiz2006} were used. The J filter used the 
+   2MASS response curve from \cite{2mass2006}.
 
    
 
@@ -138,10 +123,10 @@ its computational time, it is a robust estimator.
    \subsection{Galaxy Zoo Hubble Morphological classifications}
    
    Morphological classifications of galaxies were obtained from the Galaxy Zoo Hubble\footnote{\url{https://hubble.galaxyzoo.org}} (GZH) citizen 
-   science project \citep{galaxyzooHubble}. GZH allowed serveral independant visual classifications of each galaxy image by volunteers, the question flowchart for each
-   image is shown in figure 4 of \cite{galaxyzooHubble}.
-
-   The GZH project consists of 119,849 images 
+   science project \citep{galaxyzooHubble}. GZH allowed several independent visual classifications of each galaxy image by volunteers, the question flowchart for each
+   image is shown in Figure 4 of \cite{galaxyzooHubble}. The GZH project provides detailed classifications of 119,849 galaxies from publicly-released \textit{Hubble
+   Space Telescope Legacy} programs conducted with the Advanced Camera for Surveys. In this study we used a subset of the total GZH sample corresponding to 84,954
+   galaxies found in the COSMOS Survey \citep{scoville2007,koekemoer2007}.
 
 \section{Methods}   
 
