@@ -133,38 +133,34 @@ its computational time, it is a robust estimator.
 
    \subsection{Galaxy Zoo Hubble Morphological classifications}
    
-   In this investigation we use morphological classifications obtained from the Galaxy Zoo Hubble\footnote{\url{https://hubble.galaxyzoo.org}} (GZH) citizen 
+   Morphological classifications of galaxies were obtained from the Galaxy Zoo Hubble\footnote{\url{https://hubble.galaxyzoo.org}} (GZH) citizen 
    science project \citep{galaxyzooHubble}. GZH allowed serveral independant visual classifications of each galaxy image by volunteers, the question flowchart for each
    image is shown in figure 4 of \cite{galaxyzooHubble}.
 
    The GZH project consists of 119,849 images 
-   
-\section{Star Formation History Model}
 
-   \begin{itemize}
-    
-      \item we use the publicaly available \textsc{starpy} code \footnote{\url{http://github.com/zooniverse/starpy/}}.
-      \item  stellar population models from \cite{bruzual2003}
-  
-      \item implemented using solar metallicity
+\section{Methods}   
 
-      \item implement with a Chabrier IMF \cite{chabrier2003}
+\subsection{Modelling Star Formation History}
 
-      \item does not model for intrinsic dust.
+We used the publically available \textsc{starpy}\footnote{\url{http://github.com/zooniverse/starpy/}}
+code. \textsc{starpy} infers the star formation history (SFH) of a single galaxy by using Bayesian 
+Markov Chain Monte Carlo methods \citep{mackey2013}. Inputs of redshift, rest-frame U - V and V - J colours, 
+combined with the stellar population model of \cite{bruzual2003}, a solar metallicity, and a Chabrier
+IMF \cite{chabrier2003} produces a SFH for a galaxy. These models do not account for intrinsic dust. 
 
-      \item  assumption that all galaxies formed at t = 0 Gyr with 
-             an initial burst of star formation
-   \end{itemize}
- 
-   \begin{equation}
-      \text{SFR}(t) = \begin{cases}
-                \text{SFR}_{0}(t_{q}) & t \leq t_{q} \\
-                \text{SFR}_{0}(t_{q})\exp\bigg[-\frac{(t-t_{q})}{\tau}\bigg] & t > t_{q} 
-               \end{cases}
-       \label{eq:model}
-   \end{equation}
+The SFH model is parameterised by $t_{q}$ and $\tau$ [Gyrs], where $t_{q}$ is the onset time of quenching
+and $\tau$ characterises the rate of quenching. Increaing $\tau$ represents an exponetially slower quench. 
+Assuming that all galaxies formed at $t=0$ [Gyrs] with an initial burst of constant SFR ($\text{SFR}_{0}$), 
+we write the SFH over cosmic time ($0\leq t \text{ }[\text{Gyrs}]\leq 13.8$) as:
 
-
+ \begin{equation}
+       \text{SFR}(t) = \begin{cases}
+                 \text{SFR}_{0}(t_{q}) & t \leq t_{q} \\
+                 \text{SFR}_{0}(t_{q})\exp\bigg[-\frac{(t-t_{q})}{\tau}\bigg] & t > t_{q} 
+                \end{cases}
+        \label{eq:model}
+ \end{equation}
 
    
 
