@@ -97,24 +97,28 @@ UltraVista catalogue paper \cite{muzzin2013public}
    the Johnson response curves calculated in \cite{maiz2006} were used. The J filter used the 
    2MASS response curve from \cite{2mass2006}.
 
-   
+    Used rest frame U-V and V-J colours provided by \cite{muzzin2013public}
+   These were calculated using the \textsc{EAZY} code \cite{eazycode}, and the errors obtained from the error template in this paper.
+   Filters for the bands: U,V Johnson filtres from \cite{maiz2006}, J - 2Mass Filter from \cite{2mass2006}. 
 
    \subsection{Environment data}
   
-   Environment data was obtained from \cite{darvish2015}. The method used to estimate enrivoment was weighted
-   Voronoi Tessellation (wVT) which is an iteration on the simple Voronoi Tessellation technique \citep{ebeling1993,bernardeau1996}.
-   In simple Voroni Tesselation methods galaxies are divided into redshift planes in order to estimate local density.
-   The wVT method used a Monte-Carlo acceptance-rejection process to incorparate a weighted contriution from each galaxy
-   in the density estimate. The weight assinged to each galaxy corresponds to the likelihood of it residing in the 
-   particular redshift slice being examined.
+   Environment data was obtained from \cite{darvish2015}. The method used to estimate environment was weighted
+   Voronoi Tessellation (WVT) which is an iteration on the simple Voronoi Tessellation technique \citep{ebeling1993,bernardeau1996}.
+   In simple Voroni Tesselation, galaxies are divided into redshift planes in order to estimate local density.
+   WVT uses a Monte-Carlo acceptance-rejection process to incorporate a weighted contribution from each galaxy
+   in the density estimate. The weight assigned to each galaxy corresponds to the likelihood of it residing in the 
+   particular redshift slice being examined. Weighting the contributions aims to reduce the impact of redshift uncertainties
+   on the density estimates.
 
-   In \cite{darvish2015} it was shown that that wVT out performs several other density estimation methods when evaluted 
-   against known surface density profiles. Moreover, unlike other denisty estimators (nearest neighborough methods) 
-   wVT make no underliying assumputions about the geometry and morphology of the structures in the density field. Overall
-   this makes vVT a robust density estimator. 
+   \cite{darvish2015} showed that WVT outperforms several other density estimation methods when evaluated 
+   against known surface density profiles. Moreover, unlike other density estimators (nearest neighbor methods) 
+   WVT makes no underlying assumptions about the geometry and morphology of the structures in the density field. 
+   (Hovever it is noted that Veronoi Tessellation can not be used to assign density estimates to galaxies near the
+   edge of the field.) Overall \cite{darvish2015} concludes that WVT is a robust density estimator. 
 
-   The weighted Voroni Tellassallation algorithm and a comparison between several density estimation methods can be found 
-   in Sectoins 4.3 and 6 of \cite{darvish2015} respectively. 
+   The WVT algorithm and a comparison between several density estimation methods can be found 
+   in Sections 4.3 and 6 of \cite{darvish2015} respectively. 
 
    \subsection{Galaxy Zoo Hubble Morphological classifications}
    
