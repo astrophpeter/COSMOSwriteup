@@ -100,25 +100,21 @@ UltraVista catalogue paper \cite{muzzin2013public}
    
 
    \subsection{Environment data}
-   
-   Environment data from \cite{darvish2015}.
+  
+   Environment data was obtained from \cite{darvish2015}. The method used to estimate enrivoment was weighted
+   Voronoi Tessellation (wVT) which is an iteration on the simple Voronoi Tessellation technique \citep{ebeling1993,bernardeau1996}.
+   In simple Voroni Tesselation methods galaxies are divided into redshift planes in order to estimate local density.
+   The wVT method used a Monte-Carlo acceptance-rejection process to incorparate a weighted contriution from each galaxy
+   in the density estimate. The weight assinged to each galaxy corresponds to the likelihood of it residing in the 
+   particular redshift slice being examined.
 
-   \begin{itemize}
-      \item Method used is Weighted Voronoi Tessellation
-      \item  Quote from darvish: Unlike the nearest neighbor, Voronoi tessellation is scale-independent and is able to span a wide range of physical lengths. Also, it
-does not make any assumptions about the geometry and
-morphology of the structures in the density field. This
-characteristic makes it superior to adaptive kernel and
-nearest neighbor methods.
+   In \cite{darvish2015} it was shown that that wVT out performs several other density estimation methods when evaluted 
+   against known surface density profiles. Moreover, unlike other denisty estimators (nearest neighborough methods) 
+   wVT make no underliying assumputions about the geometry and morphology of the structures in the density field. Overall
+   this makes vVT a robust density estimator. 
 
-       \item  Quote from Darvish: However, this comes at the expense
-of a computationally expensive process by
-making several Monte-Carlo samples. Apart from
-its computational time, it is a robust estimator.
-
-      \item formula: \begin{equation}\Sigma(r_{i})=\frac{1}{A_{i}}\end{equation}
-   \end{itemize}
-
+   The weighted Voroni Tellassallation algorithm and a comparison between several density estimation methods can be found 
+   in Sectoins 4.3 and 6 of \cite{darvish2015} respectively. 
 
    \subsection{Galaxy Zoo Hubble Morphological classifications}
    
@@ -130,19 +126,19 @@ its computational time, it is a robust estimator.
 
 \section{Methods}   
 
-\subsection{Modelling Star Formation History}
+   \subsection{Modelling Star Formation History}
 
-We used the publically available \textsc{starpy}\footnote{\url{http://github.com/zooniverse/starpy/}}
-code. \textsc{starpy} infers the star formation history (SFH) of a single galaxy by using Bayesian 
-Markov Chain Monte Carlo methods \citep{mackey2013}. Inputs of redshift, rest-frame U - V and V - J colours, 
-combined with the stellar population model of \cite{bruzual2003}, a solar metallicity, and a Chabrier
-IMF \cite{chabrier2003} produces a SFH for a galaxy. These models do not account for intrinsic dust. 
-An explanation of how \textsc{starpy} works can be found in section 3 of \cite{smethurst2015galaxy}.
+   We used the publically available, Markov Chain Monte Carlo based \citep{mackey2013},
+   \textsc{starpy}\footnote{\url{http://github.com/zooniverse/starpy/}} code to infer the star formation 
+   history (SFH) of each galaxy in our sample. Inputs of redshift and of rest-frame U - V and V - J colours, 
+   combined with the stellar population model of \cite{bruzual2003}, a solar metallicity, and a Chabrier IMF 
+   \cite{chabrier2003} produces a SFH for each galaxy. These models do not account for intrinsic dust. An 
+   explanation of how \textsc{starpy} works can be found in Section 3
 
-The SFH model used is parameterised by $t_{q}$ and $\tau$ [Gyrs], where $t_{q}$ is the onset time of quenching
-and $\tau$ characterises the rate of quenching. Increaing $\tau$ represents an exponetially slower quench. 
-Assuming that all galaxies formed at $t=0$ [Gyrs] with an initial burst of constant SFR ($\text{SFR}_{0}$), 
-we write the SFH over cosmic time ($0\leq t \text{ }[\text{Gyrs}]\leq 13.8$) as:
+   The SFH model used is parameterised by $t_{q}$ and $\tau$ [Gyrs], where $t_{q}$ is the onset time of quenching
+   and $\tau$ characterises the rate of quenching. Increaing $\tau$ represents an exponetially slower quench. 
+   Assuming that all galaxies formed at $t=0$ [Gyrs] with an initial burst of constant SFR ($\text{SFR}_{0}$), 
+   we write the SFH over cosmic time ($0\leq t \text{ }[\text{Gyrs}]\leq 13.8$) as:
 
  \begin{equation}
        \text{SFR}(t) = \begin{cases}
