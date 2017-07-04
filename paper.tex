@@ -81,18 +81,20 @@ Becky's group environment paper \cite{smethurst2017galaxy}.
    UltraVISTA \citep{mcCraken2012}, S-COSMOS \citep{sanders2007}, and zCOSMOS \citep{lilly2009} datasets.
 
    We required the rest-frame U - V and V - J colours which were calculated using the \textsc{eazy} code 
-   \citep{eazycode}. For the U and V filters the Johnson response curves calculated in \cite{maiz2006} 
+   \citep{eazycode}. \textsc{eazy} determines rest-frame colors by integrating the best-fit SED through the redshifted filter curves
+over the appropriate wavelength range.For the U and V filters the Johnson response curves calculated in \cite{maiz2006} 
    were used. The J filter used the 2MASS response curve from \cite{2mass2006}.
  
    \subsection{Environment data}
   
-   Environment data was obtained from \cite{darvish2015}. The method used to estimate environment was weighted
-   Voronoi Tessellation (WVT) which is an iteration on the simple Voronoi Tessellation technique \citep{ebeling1993,bernardeau1996}.
-   In simple Voroni Tesselation, galaxies are divided into redshift planes in order to estimate local density.
-   WVT uses a Monte-Carlo acceptance-rejection process to incorporate a weighted contribution from each galaxy
-   in the density estimate. The weight assigned to each galaxy corresponds to the likelihood of it residing in the 
-   particular redshift slice being examined. Weighting the contributions aims to reduce the impact of redshift uncertainties
-   on the density estimates.
+   A continuous environmental deisity estimate ($\delta$) for each galaxy was obtained from \cite{darvish2015}.
+   The method used to estimate environment was weighted Voronoi Tessellation (WVT) which is an iteration 
+   on the simple Voronoi Tessellation technique \citep{ebeling1993,bernardeau1996}. In simple Voroni 
+   Tesselation, galaxies are divided into redshift planes to estimate local density. WVT uses a Monte-Carlo 
+   acceptance-rejection process to incorporate a weighted contribution from each galaxy in the density
+   estimate. The weight assigned to each galaxy corresponds to the likelihood of it residing in the 
+   particular redshift slice being examined. Weighting the contributions aims to reduce the impact of 
+   redshift uncertainties on the density estimates.
 
    \cite{darvish2015} showed that WVT outperforms several other density estimation methods when evaluated 
    against known surface density profiles. Moreover, unlike other density estimators (nearest neighbor methods) 
@@ -101,13 +103,18 @@ Becky's group environment paper \cite{smethurst2017galaxy}.
    edge of the field.) Overall \cite{darvish2015} concludes that WVT is a robust density estimator. 
 
    The WVT algorithm and a comparison between several density estimation methods can be found 
-   in Sections 4.3 and 6 of \cite{darvish2015} respectively. 
+   in Sections 4.3 and 6 of \cite{darvish2015} respectively. In this study galaxies were binned into low
+   ($\log(1+\delta)\leq-0.25$), intermediate ($-0.25 <\log(1+\delta)< 0.25$), and high ($\log(1+\delta)\geq0.25$)
+   desnity groups.
 
    \subsection{Galaxy Zoo Hubble Morphological classifications}
    
    Morphological classifications of galaxies were obtained from the Galaxy Zoo Hubble\footnote{\url{https://hubble.galaxyzoo.org}} (GZH) citizen 
    science project \citep{galaxyzooHubble}. GZH allowed several independent visual classifications of each galaxy image by volunteers, the question flowchart for each
-   image is shown in Figure 4 of \cite{galaxyzooHubble}. The GZH project provides detailed classifications of 119,849 galaxies from publicly-released \textit{Hubble
+   image is shown in Figure 4 of \cite{galaxyzooHubble}. Volunteers were shown colour-composite images of real and simulated \textit{Hubble Space Telescope} galaxies to
+   correct for classification redshift bais. 
+
+   The GZH project provides detailed classifications of 119,849 galaxies from publicly-released \textit{Hubble
    Space Telescope Legacy} programs conducted with the Advanced Camera for Surveys. In this study we used a subset of the total GZH sample corresponding to 84,954
    galaxies found in the COSMOS Survey \citep{scoville2007,koekemoer2007}.
 
