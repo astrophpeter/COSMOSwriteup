@@ -87,7 +87,7 @@ over the appropriate wavelength range.For the U and V filters the Johnson respon
  
    \subsection{Environment data}
   
-   A continuous environmental deisity estimate ($\delta$) for each galaxy was obtained from \cite{darvish2015}.
+   A continuous environmental density estimate ($\delta$) for each galaxy was obtained from \cite{darvish2015}.
    The method used to estimate environment was weighted Voronoi Tessellation (WVT) which is an iteration 
    on the simple Voronoi Tessellation technique \citep{ebeling1993,bernardeau1996}. In simple Voroni 
    Tesselation, galaxies are divided into redshift planes to estimate local density. WVT uses a Monte-Carlo 
@@ -97,22 +97,27 @@ over the appropriate wavelength range.For the U and V filters the Johnson respon
    redshift uncertainties on the density estimates.
 
    \cite{darvish2015} showed that WVT outperforms several other density estimation methods when evaluated 
-   against known surface density profiles. Moreover, unlike other density estimators (nearest neighbor methods) 
+   against known surface density profiles. Moreover, unlike other density estimators (nearest neighbour methods) 
    WVT makes no underlying assumptions about the geometry and morphology of the structures in the density field. 
-   (Hovever it is noted that Veronoi Tessellation can not be used to assign density estimates to galaxies near the
+   (However it is noted that Veronoi Tessellation can not be used to assign density estimates to galaxies near the
    edge of the field.) Overall \cite{darvish2015} concludes that WVT is a robust density estimator. 
 
    The WVT algorithm and a comparison between several density estimation methods can be found 
    in Sections 4.3 and 6 of \cite{darvish2015} respectively. In this study galaxies were binned into low
    ($\log(1+\delta)\leq-0.25$), intermediate ($-0.25 <\log(1+\delta)< 0.25$), and high ($\log(1+\delta)\geq0.25$)
-   desnity groups.
+   density groups.
 
    \subsection{Galaxy Zoo Hubble Morphological classifications}
    
    Morphological classifications of galaxies were obtained from the Galaxy Zoo Hubble\footnote{\url{https://hubble.galaxyzoo.org}} (GZH) citizen 
    science project \citep{galaxyzooHubble}. GZH allowed several independent visual classifications of each galaxy image by volunteers, the question flowchart for each
    image is shown in Figure 4 of \cite{galaxyzooHubble}. Volunteers were shown colour-composite images of real and simulated \textit{Hubble Space Telescope} galaxies to
-   correct for classification redshift bais. 
+   correct for classification redshift bias. 
+
+   Follwing \cite{smethurst2015galaxy} we exploit the continous nature of GZH vote fractions (see Section 3 of
+   \cite{galaxyzooHubble}) to investingate the role morphology has in populations of galaxies. This is acheived by weighting
+   each galaxies contribition to the analysis of a population by one of its morphological vote fractions. An example of a galaxy
+   with assoiciated vote fractions of disc ($p_{d}$) and smooth ($p_{s}$) is shown in the top right of figure [FIG].
 
    The GZH project provides detailed classifications of 119,849 galaxies from publicly-released \textit{Hubble
    Space Telescope Legacy} programs conducted with the Advanced Camera for Surveys. In this study we used a subset of the total GZH sample corresponding to 84,954
